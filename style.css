@@ -1,0 +1,290 @@
+/* ——— База ——— */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #EAF7F5;   /* фон по методичке */
+  color: #183E39;              /* основной текст */
+  overflow-wrap: anywhere;     /* нет обрезанного текста и горизонтальной прокрутки */
+}
+
+/* ——— Шапка ——— */
+header {
+  background-color: #176B64;
+  color: #FFFFFF;
+}
+
+header p {                     /* название приложения — обычный абзац */
+  width: 92%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+/* ——— Заголовки и ссылки ——— */
+h1, h2, a { color: #176B64; }
+
+h1 {
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+p { margin: 0 0 1rem; }
+
+img { max-width: 100%; height: auto; }
+
+/* ——— Фокус ——— */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #C2410C;
+  outline-offset: 3px;
+}
+
+/* ——— Основная часть ——— */
+main.page {
+  width: 92%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ——— Меню ——— */
+nav {
+  display: flex;
+  flex-wrap: wrap;            /* перенос меню на узком экране */
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background-color: #FFFFFF;
+  color: #176B64;
+  border: 1px solid #176B64;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background-color: #176B64;
+  color: #FFFFFF;
+}
+
+/* ——— Главная ——— */
+.hero-img {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 0 1rem;
+}
+
+.page-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 1rem 0 1rem;
+}
+
+/* ——— Главная: статус и список названий ——— */
+#status {
+  font-weight: bold;
+}
+
+#show-names {
+  padding: 0.65rem 1rem;
+  font: inherit;
+  color: #FFFFFF;
+  background-color: #176B64;
+  border: 2px solid #176B64;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+#show-names:hover {
+  background-color: #0F514B;
+}
+
+#names {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+#names li {
+  margin: 0.25rem 0;
+}
+
+/* ——— Каталог: гибкая сетка ——— */
+.catalog-search {
+  margin: 0 0 1rem;
+}
+
+.catalog-search label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+}
+
+#search {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.6rem;
+  font: inherit;
+  color: inherit;
+  background-color: #FFFFFF;
+  border: 1px solid #64748B;
+  border-radius: 0.35rem;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+
+.catalog > .card {
+  flex: 1 1 calc(50% - 0.5rem);   /* на 768 — две в ряд, третья на всю строку */
+  min-width: 0;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 4px solid #176B64;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.card img {
+  display: block;
+  width: 100%;                  /* пропорции сохраняются через height: auto */
+  margin: 0 0 0.75rem;
+}
+
+.card h2 { margin: 0 0 0.75rem; }
+
+.card .specs {
+  margin: 0 0 0.5rem;
+  padding: 0.5rem;
+  background-color: #176B64;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.card .description {
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #FEF3C7;
+  color: #78350F;
+}
+
+/* ——— Форма ——— */
+.request-form {
+  background-color: #FFFFFF;
+  border: 1px solid #BFD3D0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  max-width: 32rem;
+}
+
+.form-field { margin: 0 0 1rem; }
+
+.form-field > label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+}
+
+.request-form input[type="number"],
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #64748B;
+  border-radius: 0.35rem;
+  font: inherit;
+  color: inherit;
+  background-color: #FFFFFF;
+}
+
+.request-form textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.request-form input[type="range"] {
+  width: 100%;
+  accent-color: #176B64;
+}
+
+.request-form input[type="checkbox"] { accent-color: #176B64; }
+
+.range-hint {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.form-check input {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.request-form button {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  background-color: #176B64;
+  color: #FFFFFF;
+  border: 2px solid #176B64;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.request-form button:hover { background-color: #0F514B; }
+
+#result {
+  margin: 0.75rem 0 0;
+  font-weight: bold;
+}
+
+#result:empty {
+  display: none;
+}
+
+/* ——— Подпись страницы ——— */
+.page-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ——— Узкий экран: карточки по одной ——— */
+@media (max-width: 600px) {
+  .catalog > .card { flex-basis: 100%; }
+}

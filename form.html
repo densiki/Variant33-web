@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Форма — Афиша вечера · V29</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p>Афиша вечера · V29</p>
+  </header>
+
+  <main class="page">
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+    </nav>
+
+    <h1>План участия</h1>
+    <p>Учебная форма. Данные пока не сохраняются.</p>
+
+    <form class="request-form" method="get">
+      <!-- 1 -->
+      <p class="form-field">
+        <label for="quantity">Количество мест</label>
+        <input type="number" id="quantity" name="quantity" min="1" step="1" value="3" required>
+      </p>
+
+      <!-- 2 -->
+      <p class="form-field">
+        <label for="wishes">Пожелания к участию</label>
+        <textarea id="wishes" name="wishes" rows="3" placeholder="Опишите ваши пожелания"></textarea>
+      </p>
+
+      <!-- 3 -->
+      <p class="form-field">
+        <label for="item">Название события</label>
+        <select id="item" name="item" required>
+          <option value="">Выберите из списка</option>
+          <option value="cinema">Кино и обсуждение</option>
+          <option value="poetry">Поэтический круг</option>
+          <option value="acoustic">Акустический вечер</option>
+        </select>
+      </p>
+
+      <!-- 4 -->
+      <p class="form-field">
+        <label for="proximity">Близость к сцене</label>
+        <input type="range" id="proximity" name="proximity" min="1" max="5" step="1" value="3">
+        <span class="range-hint">1 — Дальше; 5 — Ближе</span>
+      </p>
+
+      <!-- 5 -->
+      <div class="form-check">
+        <input type="checkbox" id="program" name="program" value="yes" checked>
+        <label for="program">Нужна программа</label>
+      </div>
+
+      <!-- 6 -->
+      <div class="form-check">
+        <input type="checkbox" id="nearby" name="nearby" value="yes">
+        <label for="nearby">Места рядом</label>
+      </div>
+
+      <button type="submit">Выбрать событие</button>
+      <p id="result" role="status" aria-live="polite"></p>
+    </form>
+
+    <p><a href="index.html">Назад</a></p>
+
+    <footer class="page-footer">Учебный прототип · Вариант 29</footer>
+  </main>
+  <script src="form.js" defer></script>
+</body>
+</html>
